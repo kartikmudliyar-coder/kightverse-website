@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./App.css";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -6,7 +6,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { MapPin } from "lucide-react";
-import { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 export default function App() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -33,11 +32,6 @@ export default function App() {
         }
       );
   };
-
-  const services = [
-    { icon: "💼", title: "B2B Event Management", ... },
-    ...
-  ];
   const services = [
     { icon: "💼", title: "B2B Event Management", desc: "Seamless, tech-driven event experiences tailored for audiences of every scale and industry." },
     { icon: "💡", title: "Event IP Creation (Digital + On-Ground)", desc: "Designing unique intellectual properties — from digital experiences to large-scale events — that engage audiences deeply." },
@@ -182,34 +176,32 @@ export default function App() {
           <p>📱 +91 97698 23465</p>
 
 <form ref={formRef} className="form" onSubmit={sendEmail}>
-           <input
-  type="text"
-  name="name"
-  value={form.name}
-  onChange={(e) => setForm({ ...form, name: e.target.value })}
-  placeholder="Your Name"
-  required
-/>
-
-<input
-  type="email"
-  name="email"
-  value={form.email}
-  onChange={(e) => setForm({ ...form, email: e.target.value })}
-  placeholder="Your Email"
-  required
-/>
-
-<textarea
-  name="message"
-  value={form.message}
-  onChange={(e) => setForm({ ...form, message: e.target.value })}
-  placeholder="Your Message"
-  rows="4"
-  required
-/>
-            <button className="submit">Send Message</button>
-          </form>
+  <input
+    type="text"
+    name="name"
+    value={form.name}
+    onChange={(e) => setForm({ ...form, name: e.target.value })}
+    placeholder="Your Name"
+    required
+  />
+  <input
+    type="email"
+    name="email"
+    value={form.email}
+    onChange={(e) => setForm({ ...form, email: e.target.value })}
+    placeholder="Your Email"
+    required
+  />
+  <textarea
+    name="message"
+    value={form.message}
+    onChange={(e) => setForm({ ...form, message: e.target.value })}
+    placeholder="Your Message"
+    rows="4"
+    required
+  />
+  <button type="submit" className="submit">Send Message</button>
+</form>
         </section>
       </main>
 
