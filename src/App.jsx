@@ -5,6 +5,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { MapPin } from "lucide-react";
 export default function App() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
@@ -110,8 +111,7 @@ export default function App() {
   ))}
 </Swiper>
 </section>
-        import { MapPin } from "lucide-react";
-
+{/* Presence Section */}
 <section className="presence">
   <h2>Our Team’s Presence Across India</h2>
   <p>
