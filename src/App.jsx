@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -7,31 +7,38 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { MapPin } from "lucide-react";
 import emailjs from "@emailjs/browser";
-export default function App() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
- const formRef = useRef();
+export default function ContactForm() {
+  const [status, setStatus] = useState("");
 
-  const sendEmail = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "your_service_id",   // Replace with EmailJS Service ID
-        "your_template_id",  // Replace with EmailJS Template ID
-        formRef.current,
-        "your_public_key"    // Replace with EmailJS Public Key
-      )
-      .then(
-        (result) => {
-          alert("✅ Message sent successfully!");
-          setForm({ name: "", email: "", message: "" }); // clear inputs
-        },
-        (error) => {
-          alert("❌ Something went wrong. Please try again.");
-          console.error(error.text);
-        }
-      );
+    const formData = new FormData(e.target);
+    formData.append("access_key", "feede7e1-5ce3-46f8-96dc-4adaef08395d"); 
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    }).then((res) => res.json());
+
+    if (res.success) {
+      setStatus("✅ Message sent successfully!");
+      e.target.reset();
+    } else {
+      setStatus("❌ Something went wrong. Please try again.");
+    }
   };
+
+  return (
+    <form onSubmit={handleSubmit} className="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+      <p>{status}</p>
+    </form>
+  );
+}
   const services = [
     { icon: "💼", title: "B2B Event Management", desc: "Seamless, tech-driven event experiences tailored for audiences of every scale and industry." },
     { icon: "💡", title: "Event IP Creation (Digital + On-Ground)", desc: "Designing unique intellectual properties — from digital experiences to large-scale events — that engage audiences deeply." },
