@@ -164,6 +164,8 @@ h1 {
 .work img:hover {
   transform: scale(1.05); /* subtle zoom on hover */
 }
+
+/* Presence Section */
 .presence {
   text-align: center;
   padding: 60px 20px;
@@ -254,6 +256,7 @@ h1 {
   background: white;
   color: var(--brand);
 }
+
 /* Contact Section */
 .contact {
   margin: 50px 0;
