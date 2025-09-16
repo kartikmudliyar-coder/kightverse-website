@@ -164,6 +164,47 @@ h1 {
 .work img:hover {
   transform: scale(1.05); /* subtle zoom on hover */
 }
+.presence {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  margin: 60px auto;
+  max-width: 1000px;
+}
+
+.presence h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--brand);
+  margin-bottom: 16px;
+}
+
+.presence p {
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+  color: #444;
+}
+
+.presence-cities {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.city-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #222;
+}
+
+.city-card svg {
+  color: var(--brand);
+}
 /* CTA Banner */
 .cta-banner {
   background: var(--brand);   /* brand blue background */
