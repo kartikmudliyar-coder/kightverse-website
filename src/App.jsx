@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { MapPin } from "lucide-react";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 export default function App() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
  const formRef = useRef();
