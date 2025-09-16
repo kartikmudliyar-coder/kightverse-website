@@ -110,6 +110,29 @@ export default function App() {
   ))}
 </Swiper>
 </section>
+        import { MapPin } from "lucide-react";
+
+<section className="presence">
+  <h2>Our Team’s Presence Across India</h2>
+  <p>
+    With collaborators based in Mumbai, Delhi, and Bangalore, 
+    Kight stays connected to the country’s leading creative hubs.
+  </p>
+  <div className="presence-cities">
+    <div className="city-card">
+      <MapPin size={32} />
+      <span>Mumbai</span>
+    </div>
+    <div className="city-card">
+      <MapPin size={32} />
+      <span>Delhi</span>
+    </div>
+    <div className="city-card">
+      <MapPin size={32} />
+      <span>Bangalore</span>
+    </div>
+  </div>
+</section>
 {/* CTA Banner */}
 <section className="cta-banner">
   <h2>Events. Content. Stories. Collaborations. Let’s build what matters together.</h2>
