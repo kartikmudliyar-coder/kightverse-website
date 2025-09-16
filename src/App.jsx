@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./App.css";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -6,9 +6,32 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { MapPin } from "lucide-react";
+import emailjs from "emailjs-com";
 export default function App() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+ const formRef = useRef();
 
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "your_service_id",   // Replace with EmailJS Service ID
+        "your_template_id",  // Replace with EmailJS Template ID
+        formRef.current,
+        "your_public_key"    // Replace with EmailJS Public Key
+      )
+      .then(
+        (result) => {
+          alert("✅ Message sent successfully!");
+          setForm({ name: "", email: "", message: "" }); // clear inputs
+        },
+        (error) => {
+          alert("❌ Something went wrong. Please try again.");
+          console.error(error.text);
+        }
+      );
+  };
   const services = [
     { icon: "💼", title: "B2B Event Management", desc: "Seamless, tech-driven event experiences tailored for audiences of every scale and industry." },
     { icon: "💡", title: "Event IP Creation (Digital + On-Ground)", desc: "Designing unique intellectual properties — from digital experiences to large-scale events — that engage audiences deeply." },
@@ -152,12 +175,33 @@ export default function App() {
           <p>📧 kartik.mudliyar@kightverse.com</p>
           <p>📱 +91 97698 23465</p>
 
-          <form className="form" onSubmit={(e) => e.preventDefault()}>
-            <input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Your Name" />
-            <input value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="Your Email" />
-            <textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Your Message" rows="4" />
-            <button className="submit">Send Message</button>
-          </form>
+<form ref={formRef} className="form" onSubmit={sendEmail}>
+  <input
+    type="text"
+    name="name"
+    value={form.name}
+    onChange={(e) => setForm({ ...form, name: e.target.value })}
+    placeholder="Your Name"
+    required
+  />
+  <input
+    type="email"
+    name="email"
+    value={form.email}
+    onChange={(e) => setForm({ ...form, email: e.target.value })}
+    placeholder="Your Email"
+    required
+  />
+  <textarea
+    name="message"
+    value={form.message}
+    onChange={(e) => setForm({ ...form, message: e.target.value })}
+    placeholder="Your Message"
+    rows="4"
+    required
+  />
+  <button type="submit" className="submit">Send Message</button>
+</form>
         </section>
       </main>
 
