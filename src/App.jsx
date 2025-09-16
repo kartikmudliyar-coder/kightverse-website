@@ -201,32 +201,38 @@ function App() {
           </div>
         </section>
 
-        {/* Contact Section */}
-        <section id="contact" className="contact">
-          <h2>Contact Us</h2>
-          <p>📧 kartik.mudliyar@kightverse.com</p>
-          <p>📱 +91 97698 23465</p>
+       {/* Contact Section */}
+<section id="contact" className="contact">
+  <h2>Contact Us</h2>
+  <p>📧 kartik.mudliyar@kightverse.com</p>
+  <p>📱 +91 97698 23465</p>
 
-          <form onSubmit={handleSubmit} className="form">
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              required
-            />
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              rows="4"
-              required
-            ></textarea>
-            <button type="submit" className="submit">
-              Send Message
-            </button>
-            <p>{status}</p>
-          </form>
-        </section>
+  <form
+  action="https://formspree.io/f/mandgqkl"
+    method="POST"
+    className="form"
+  >
+    <input
+      type="text"
+      name="name"
+      placeholder="Your Name"
+      required
+    />
+    <input
+      type="email"
+      name="email"
+      placeholder="Your Email"
+      required
+    />
+    <textarea
+      name="message"
+      placeholder="Your Message"
+      rows="4"
+      required
+    ></textarea>
+    <button type="submit" className="submit">Send Message</button>
+  </form>
+</section>
       </main>
 
       {/* Footer */}
