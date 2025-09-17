@@ -1,64 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#1b9cfc" />
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
 
-    <!-- ✅ Title -->
-    <title>Kight - Stories that Soar. Experiences that Transform.</title>
-
-    <!-- ✅ Meta Description -->
-    <meta
-      name="description"
-      content="Kight helps brands rise with purpose — through events, content, and collaborations that inspire and connect."
-    />
-
-    <!-- ✅ Keywords -->
-    <meta
-      name="keywords"
-      content="Kight, event management, influencer marketing, IP creation, brand storytelling, content, India events"
-    />
-
-    <!-- ✅ Open Graph -->
-    <meta property="og:title" content="Kight - Stories that Soar. Experiences that Transform." />
-    <meta
-      property="og:description"
-      content="At Kight, we craft events, collaborations, and stories that connect and inspire."
-    />
-    <meta property="og:image" content="https://kightverse.com/logo-white.svg" />
-    <meta property="og:url" content="https://kightverse.com" />
-    <meta property="og:type" content="website" />
-
-    <!-- ✅ Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Kight - Stories that Soar. Experiences that Transform." />
-    <meta
-      name="twitter:description"
-      content="At Kight, we craft events, collaborations, and stories that connect and inspire."
-    />
-    <meta name="twitter:image" content="https://kightverse.com/logo-white.svg" />
-
-    <!-- ✅ JSON-LD -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Kight",
-        "url": "https://kightverse.com",
-        "logo": "https://kightverse.com/logo-white.svg",
-        "sameAs": [
-          "https://www.linkedin.com/company/kightverse",
-          "https://www.instagram.com/kightverse"
-        ],
-        "description": "Kight helps brands rise with purpose — through events, content, and collaborations that inspire and connect."
-      }
-    </script>
-  </head>
-  <body>
-    <!-- ✅ React root must remain here -->
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
-</html>
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
