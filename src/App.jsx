@@ -222,7 +222,15 @@ function App() {
   </form>
 
   {/* Status message */}
-  {status && <p className="form-status">{status}</p>}
+{status && (
+  <div
+    className={`form-status ${
+      status.startsWith("✅") ? "success" : "error"
+    }`}
+  >
+    {status}
+  </div>
+)}
 </section>
       </main>
 
