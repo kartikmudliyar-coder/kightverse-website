@@ -195,7 +195,7 @@ function App() {
             {/* WhatsApp button updated */}
             <a
               className="cta-btn"
-              href="https://wa.me/919123456789"
+              href="https://wa.me/919833194999"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -205,7 +205,7 @@ function App() {
             {/* Email button updated */}
             <a
               className="cta-btn alt"
-              href="mailto:partner@kightverse.com"
+              href="mailto:hello@kightverse.com"
             >
               Email Us
             </a>
@@ -215,8 +215,8 @@ function App() {
         {/* Contact Section */}
         <section id="contact" className="contact">
           <h2>Contact Us</h2>
-          <p>📧 partner@kightverse.com</p>
-          <p>📱 +91 9123456789</p>
+          <p>📧 hello@kightverse.com</p>
+          <p>📱 +91 98331 94999</p>
 
           {/* Invisible element to force Git rebuild */}
           <p style={{ display: "none" }}>Force Vercel rebuild trigger</p>
@@ -252,7 +252,7 @@ function App() {
 
       {/* Floating WhatsApp Button updated */}
       <a
-        href="https://wa.me/919123456789"
+        href="https://wa.me/9833194999"
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-float"
