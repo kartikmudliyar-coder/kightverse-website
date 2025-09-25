@@ -9,6 +9,7 @@ import { MapPin } from "lucide-react";
 
 function App() {
   const [status, setStatus] = useState("");
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -191,17 +192,20 @@ function App() {
             together.
           </h2>
           <div className="cta-buttons">
+            {/* WhatsApp button updated */}
             <a
               className="cta-btn"
-              href="https://wa.me/919123456789"  {/* updated WhatsApp */}
+              href="https://wa.me/919123456789"
               target="_blank"
               rel="noopener noreferrer"
             >
               Chat on WhatsApp
             </a>
+
+            {/* Email button updated */}
             <a
               className="cta-btn alt"
-              href="mailto:partner@kightverse.com"  {/* updated email */}
+              href="mailto:partner@kightverse.com"
             >
               Email Us
             </a>
@@ -211,10 +215,11 @@ function App() {
         {/* Contact Section */}
         <section id="contact" className="contact">
           <h2>Contact Us</h2>
-          <p>📧 partner@kightverse.com </p>  {/* updated email */}
-          <p>📱 +91 9123456789</p>          {/* updated WhatsApp */}
-          
-          <p style={{ display: "none" }}>Force Vercel rebuild trigger</p> {/* invisible change to force Git */}
+          <p>📧 partner@kightverse.com</p>
+          <p>📱 +91 9123456789</p>
+
+          {/* Invisible element to force Git rebuild */}
+          <p style={{ display: "none" }}>Force Vercel rebuild trigger</p>
 
           <form className="form" onSubmit={handleSubmit}>
             <input type="text" name="name" placeholder="Your Name" required />
@@ -245,9 +250,9 @@ function App() {
         <p>© {new Date().getFullYear()} Kight Verse. All rights reserved.</p>
       </footer>
 
-      {/* Floating WhatsApp Button */}
+      {/* Floating WhatsApp Button updated */}
       <a
-        href="https://wa.me/919123456789"  {/* updated WhatsApp */}
+        href="https://wa.me/919123456789"
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-float"
