@@ -1,8 +1,14 @@
 {
   "redirects": [
     {
-      "source": "/:path*",
-      "destination": "https://www.kightverse.com/:path*",
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "kightverse.com"
+        }
+      ],
+      "destination": "https://www.kightverse.com/:1",
       "permanent": true
     }
   ]
