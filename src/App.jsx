@@ -9,32 +9,32 @@ import { MapPin } from "lucide-react";
 
 function App() {
   const [status, setStatus] = useState("");
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const formData = new FormData(e.target);
-  formData.append("access_key", "feede7e1-5ce3-46f8-96dc-4adaef08395d");
+    const formData = new FormData(e.target);
+    formData.append("access_key", "feede7e1-5ce3-46f8-96dc-4adaef08395d");
 
-  try {
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    });
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
 
-    const data = await response.json();
-    console.log("Web3Forms response:", data);
+      const data = await response.json();
+      console.log("Web3Forms response:", data);
 
-    if (data.success) {
-      setStatus("✅ Message sent successfully!");
-      e.target.reset();
-    } else {
-      setStatus(`❌ Error: ${data.message}`);
+      if (data.success) {
+        setStatus("✅ Message sent successfully!");
+        e.target.reset();
+      } else {
+        setStatus(`❌ Error: ${data.message}`);
+      }
+    } catch (error) {
+      console.error("Fetch error:", error);
+      setStatus("❌ Network error. Please try again later.");
     }
-  } catch (error) {
-    console.error("Fetch error:", error);
-    setStatus("❌ Network error. Please try again later.");
-  }
-};
+  };
 
   const services = [
     {
@@ -193,7 +193,7 @@ const handleSubmit = async (e) => {
           <div className="cta-buttons">
             <a
               className="cta-btn"
-              href="https://wa.me/919833194999"
+              href="https://wa.me/919123456789"  {/* updated WhatsApp */}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -201,44 +201,38 @@ const handleSubmit = async (e) => {
             </a>
             <a
               className="cta-btn alt"
-              href="mailto:hello@kightverse.com"
+              href="mailto:partner@kightverse.com"  {/* updated email */}
             >
               Email Us
             </a>
           </div>
         </section>
 
- {/* Contact Section */}
-<section id="contact" className="contact">
-  <h2>Contact Us</h2>
-  <p>📧 hello@kightverse.com </p>
-  <p>📱 +91 9833194999</p>
+        {/* Contact Section */}
+        <section id="contact" className="contact">
+          <h2>Contact Us</h2>
+          <p>📧 partner@kightverse.com </p>  {/* updated email */}
+          <p>📱 +91 9123456789</p>          {/* updated WhatsApp */}
+          
+          <p style={{ display: "none" }}>Force Vercel rebuild trigger</p> {/* invisible change to force Git */}
 
-  <form className="form" onSubmit={handleSubmit}>
-    {/* Name */}
-    <input type="text" name="name" placeholder="Your Name" required />
+          <form className="form" onSubmit={handleSubmit}>
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit" className="submit">Send Message</button>
+          </form>
 
-    {/* Email */}
-    <input type="email" name="email" placeholder="Your Email" required />
-
-    {/* Message */}
-    <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-
-    {/* Button */}
-    <button type="submit" className="submit">Send Message</button>
-  </form>
-
-  {/* Status message */}
-{status && (
-  <div
-    className={`form-status ${
-      status.startsWith("✅") ? "success" : "error"
-    }`}
-  >
-    {status}
-  </div>
-)}
-</section>
+          {status && (
+            <div
+              className={`form-status ${
+                status.startsWith("✅") ? "success" : "error"
+              }`}
+            >
+              {status}
+            </div>
+          )}
+        </section>
       </main>
 
       {/* Footer */}
@@ -253,7 +247,7 @@ const handleSubmit = async (e) => {
 
       {/* Floating WhatsApp Button */}
       <a
-        href="https://wa.me/9199833194999"
+        href="https://wa.me/919123456789"  {/* updated WhatsApp */}
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-float"
