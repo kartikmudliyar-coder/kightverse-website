@@ -211,7 +211,7 @@ const handleSubmit = async (e) => {
  {/* Contact Section */}
 <section id="contact" className="contact">
   <h2>Contact Us</h2>
-  <p>📧 hello@kightverse.com</p>
+  <p>📧 hello@kightverse.com </p>
   <p>📱 +91 98331 94999</p>
 
   <form className="form" onSubmit={handleSubmit}>
