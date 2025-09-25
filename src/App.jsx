@@ -193,7 +193,7 @@ const handleSubmit = async (e) => {
           <div className="cta-buttons">
             <a
               className="cta-btn"
-              href="https://wa.me/9833194999"
+              href="https://wa.me/919833194999"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -253,7 +253,7 @@ const handleSubmit = async (e) => {
 
       {/* Floating WhatsApp Button */}
       <a
-        href="https://wa.me/9833194999"
+        href="https://wa.me/919833194999"
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-float"
