@@ -212,7 +212,7 @@ const handleSubmit = async (e) => {
 <section id="contact" className="contact">
   <h2>Contact Us</h2>
   <p>📧 hello@kightverse.com </p>
-  <p>📱 +91 98331 94999</p>
+  <p>📱 +91 9833194999</p>
 
   <form className="form" onSubmit={handleSubmit}>
     {/* Name */}
@@ -253,7 +253,7 @@ const handleSubmit = async (e) => {
 
       {/* Floating WhatsApp Button */}
       <a
-        href="https://wa.me/919833194999"
+        href="https://wa.me/9199833194999"
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-float"
