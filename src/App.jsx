@@ -193,7 +193,7 @@ const handleSubmit = async (e) => {
           <div className="cta-buttons">
             <a
               className="cta-btn"
-              href="https://wa.me/919769823465"
+              href="https://wa.me/9833194999"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -201,7 +201,7 @@ const handleSubmit = async (e) => {
             </a>
             <a
               className="cta-btn alt"
-              href="mailto:kartik.mudliyar@kightverse.com"
+              href="mailto:hello@kightverse.com"
             >
               Email Us
             </a>
@@ -211,8 +211,8 @@ const handleSubmit = async (e) => {
  {/* Contact Section */}
 <section id="contact" className="contact">
   <h2>Contact Us</h2>
-  <p>📧 kartik.mudliyar@kightverse.com</p>
-  <p>📱 +91 97698 23465</p>
+  <p>📧 hello@kightverse.com</p>
+  <p>📱 +91 98331 94999</p>
 
   <form className="form" onSubmit={handleSubmit}>
     {/* Name */}
@@ -253,7 +253,7 @@ const handleSubmit = async (e) => {
 
       {/* Floating WhatsApp Button */}
       <a
-        href="https://wa.me/919769823465"
+        href="https://wa.me/9833194999"
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-float"
